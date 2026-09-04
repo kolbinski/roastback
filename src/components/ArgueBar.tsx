@@ -34,6 +34,7 @@ export default function ArgueBar({
       <div className="max-w-2xl mx-auto flex items-end gap-3 py-4 px-4">
         <textarea
           ref={textareaRef}
+          autoFocus
           value={value}
           onChange={e => {
             onChange(e.target.value);

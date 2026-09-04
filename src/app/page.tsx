@@ -140,6 +140,7 @@ export default function Home() {
             {messages.length > 0 &&
               !loading &&
               !errorType &&
+              !showArgueBar &&
               messages[messages.length - 1].role === 'ai' &&
               !threadClosed && (
                 <ReactionButtons
