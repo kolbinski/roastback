@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Roastback',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.png?v=2',
         width: 1200,
         height: 630,
         alt: 'Roastback - AI photo roast app',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: 'Roastback',
     description:
       'Upload a photo, get roasted by AI, and hit back with one sharp reply. RoastBack.app has zero mercy and always gets the last word.',
-    images: ['/og-image.png'],
+    images: ['/og-image.png?v=2'],
   },
 };
 
