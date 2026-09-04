@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     "Roastback - Show me what you've got. I'll tell you who you are today.",
   description:
     'Upload a photo, get roasted by AI, and argue back. RoastBack.app has no mercy.',
-  metadataBase: new URL('https://roastback.app'),
+  metadataBase: new URL('https://kolbinski.github.io/roastback/'),
   openGraph: {
     title: 'Roastback',
     description:
       'Upload a photo, get roasted by AI, and argue back. RoastBack.app has no mercy.',
-    url: 'https://roastback.app',
+    url: 'https://kolbinski.github.io/roastback/',
     siteName: 'Roastback',
     images: [
       {
