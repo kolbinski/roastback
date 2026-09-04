@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { detectLanguage, translations, type LanguageCode } from '@/lib/i18n';
+import { detectLanguage, translations, SUPPORTED_LANGUAGES, type LanguageCode } from '@/lib/i18n';
 import { processImage } from '@/lib/image';
 import { getVisitorId } from '@/lib/session';
 import { callRoast, callArgue } from '@/lib/api';
@@ -24,11 +24,18 @@ export function useRoastback() {
   const [threadClosed, setThreadClosed] = useState(false);
 
   useEffect(() => {
-    setLanguage(detectLanguage());
+    const saved = localStorage.getItem('roastback_language');
+    const isValid = saved && SUPPORTED_LANGUAGES.some((l) => l.code === saved);
+    setLanguage(isValid ? (saved as LanguageCode) : detectLanguage());
     setReady(true);
   }, []);
 
   const t = translations[language];
+
+  const updateLanguage = (lang: LanguageCode) => {
+    localStorage.setItem('roastback_language', lang);
+    setLanguage(lang);
+  };
 
   const classifyError = (apiError: string | undefined): ErrorType => {
     if (apiError === 'moderation_flagged') return 'moderation';
@@ -132,7 +139,7 @@ export function useRoastback() {
 
   return {
     language,
-    setLanguage,
+    setLanguage: updateLanguage,
     ready,
     t,
     photoBase64,

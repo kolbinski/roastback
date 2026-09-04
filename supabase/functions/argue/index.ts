@@ -27,6 +27,14 @@ serve(async (req) => {
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
   );
 
+  const logApiError = async (source: string, status: number | null, details: unknown) => {
+    await supabase.from("api_errors").insert({
+      source,
+      status,
+      error_details: JSON.stringify(details),
+    });
+  };
+
   const { data: configRows, error: configError } = await supabase
     .from("config")
     .select("label, value");
@@ -132,6 +140,11 @@ serve(async (req) => {
   );
 
   const geminiData = await geminiResponse.json();
+
+  if (!geminiResponse.ok) {
+    await logApiError("gemini_argue", geminiResponse.status, geminiData);
+  }
+
   const replyText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
 
   if (!replyText) {
