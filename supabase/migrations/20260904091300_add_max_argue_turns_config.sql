@@ -1,0 +1,1 @@
+insert into config (label, value) values ('max_argue_turns', 1);

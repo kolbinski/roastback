@@ -1,0 +1,1 @@
+export type Message = { role: 'ai' | 'user'; text: string };
