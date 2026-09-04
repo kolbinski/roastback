@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   title:
     "Roastback - Show me what you've got. I'll tell you who you are today.",
   description:
-    '"Upload a photo, get roasted by AI, and hit back with one sharp reply. RoastBack.app has zero mercy and always gets the last word."',
+    'Upload a photo, get roasted by AI, and hit back with one sharp reply. RoastBack.app has zero mercy and always gets the last word.',
   metadataBase: new URL('https://kolbinski.github.io/roastback/'),
   openGraph: {
     title: 'Roastback',
     description:
-      '"Upload a photo, get roasted by AI, and hit back with one sharp reply. RoastBack.app has zero mercy and always gets the last word."',
+      'Upload a photo, get roasted by AI, and hit back with one sharp reply. RoastBack.app has zero mercy and always gets the last word.',
     url: 'https://kolbinski.github.io/roastback/',
     siteName: 'Roastback',
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Roastback',
     description:
-      '"Upload a photo, get roasted by AI, and hit back with one sharp reply. RoastBack.app has zero mercy and always gets the last word."',
+      'Upload a photo, get roasted by AI, and hit back with one sharp reply. RoastBack.app has zero mercy and always gets the last word.',
     images: ['/og-image.png'],
   },
 };
