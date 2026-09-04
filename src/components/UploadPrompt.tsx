@@ -14,9 +14,8 @@ export default function UploadPrompt({
       <p
         className="text-lg font-serif"
         style={{ color: 'var(--color-text-muted)' }}
-      >
-        {t.heroCopy}
-      </p>
+        dangerouslySetInnerHTML={{ __html: t.heroCopy }}
+      />
       <input
         type="file"
         accept="image/*"

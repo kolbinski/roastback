@@ -29,7 +29,7 @@ export const translations: Record<
   }
 > = {
   en: {
-    heroCopy: "Show me what you've got. I'll tell you who you are today.",
+    heroCopy: "Show me what you've got.<br />I'll tell you who you are today.",
     buttonLabel: "Roast Back",
     userBubble: "Hey RoastBack.app, roast my photo, have no mercy!",
     loadingText: "Roasting... this can take a moment, I'm going to be brutal.",
@@ -47,7 +47,7 @@ export const translations: Record<
     contactLabel: "Contact",
   },
   pl: {
-    heroCopy: "Pokaż mi, co masz. Powiem Ci, kim dziś jesteś.",
+    heroCopy: "Pokaż mi, co masz.<br />Powiem Ci, kim dziś jesteś.",
     buttonLabel: "Roast Back",
     userBubble: "Hej RoastBack.app, zroastuj moje zdjęcie, bez litości!",
     loadingText: "Roastuję... to może chwilę potrwać, zamierzam być bezlitosny.",
@@ -65,7 +65,7 @@ export const translations: Record<
     contactLabel: "Kontakt",
   },
   de: {
-    heroCopy: "Zeig mir, was du hast. Ich sage dir, wer du heute bist.",
+    heroCopy: "Zeig mir, was du hast.<br />Ich sage dir, wer du heute bist.",
     buttonLabel: "Roast Back",
     userBubble: "Hey RoastBack.app, roaste mein Foto, kein Mitleid!",
     loadingText: "Am Rösten... das kann einen Moment dauern, ich werde gnadenlos sein.",
@@ -83,7 +83,7 @@ export const translations: Record<
     contactLabel: "Kontakt",
   },
   fr: {
-    heroCopy: "Montre-moi ce que tu as. Je te dirai qui tu es aujourd'hui.",
+    heroCopy: "Montre-moi ce que tu as.<br />Je te dirai qui tu es aujourd'hui.",
     buttonLabel: "Roast Back",
     userBubble: "Hé RoastBack.app, roaste ma photo, sans pitié !",
     loadingText: "En train de roaster... ça peut prendre un moment, je vais être impitoyable.",
@@ -101,7 +101,7 @@ export const translations: Record<
     contactLabel: "Contact",
   },
   es: {
-    heroCopy: "Muéstrame lo que tienes. Te diré quién eres hoy.",
+    heroCopy: "Muéstrame lo que tienes.<br />Te diré quién eres hoy.",
     buttonLabel: "Roast Back",
     userBubble: "Oye RoastBack.app, destroza mi foto, sin piedad!",
     loadingText: "Destrozando... esto puede tardar un momento, voy a ser brutal.",

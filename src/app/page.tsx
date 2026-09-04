@@ -39,9 +39,18 @@ export default function Home() {
 
   const handleDownload = async () => {
     if (!contentRef.current) return;
-    const dataUrl = await toPng(contentRef.current, {
+    const el = contentRef.current;
+    const previousWidth = el.style.width;
+
+    el.style.width = '672px';
+
+    const dataUrl = await toPng(el, {
       backgroundColor: '#1F1B19',
+      pixelRatio: 2,
     });
+
+    el.style.width = previousWidth;
+
     const link = document.createElement('a');
     link.download = 'roastback.png';
     link.href = dataUrl;
@@ -64,7 +73,7 @@ export default function Home() {
         onLogoClick={resetSession}
       />
 
-      <main className="flex-1 flex flex-col items-center justify-center px-6 pb-32">
+      <main className="flex-1 flex flex-col items-center justify-center pb-32">
         {!photoBase64 ? (
           <UploadPrompt t={t} onFileChange={handleFileChange} />
         ) : (
@@ -153,7 +162,7 @@ export default function Home() {
         />
       )}
 
-      <Footer t={t} />
+      {!photoBase64 && <Footer t={t} />}
     </div>
   );
 }
