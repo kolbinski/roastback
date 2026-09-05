@@ -26,6 +26,11 @@ export const translations: Record<
     termsLabel: string;
     privacyLabel: string;
     contactLabel: string;
+    downloadModalTitle: string;
+    downloadMobileOption: string;
+    downloadDesktopOption: string;
+    downloadConfirmLabel: string;
+    cancelLabel: string;
   }
 > = {
   en: {
@@ -45,6 +50,11 @@ export const translations: Record<
     termsLabel: "Terms of Use",
     privacyLabel: "Privacy Policy",
     contactLabel: "Contact",
+    downloadModalTitle: "Choose width",
+    downloadMobileOption: "Mobile - 420px",
+    downloadDesktopOption: "Desktop - 700px",
+    downloadConfirmLabel: "Download",
+    cancelLabel: "Cancel",
   },
   pl: {
     heroCopy: "Pokaż mi, co masz.<br />Powiem Ci, kim dziś jesteś.",
@@ -63,6 +73,11 @@ export const translations: Record<
     termsLabel: "Regulamin",
     privacyLabel: "Polityka prywatności",
     contactLabel: "Kontakt",
+    downloadModalTitle: "Wybierz szerokość",
+    downloadMobileOption: "Mobile - 420px",
+    downloadDesktopOption: "Desktop - 700px",
+    downloadConfirmLabel: "Pobierz",
+    cancelLabel: "Anuluj",
   },
   de: {
     heroCopy: "Zeig mir, was du hast.<br />Ich sage dir, wer du heute bist.",
@@ -81,6 +96,11 @@ export const translations: Record<
     termsLabel: "Nutzungsbedingungen",
     privacyLabel: "Datenschutzrichtlinie",
     contactLabel: "Kontakt",
+    downloadModalTitle: "Breite wählen",
+    downloadMobileOption: "Mobil - 420px",
+    downloadDesktopOption: "Desktop - 700px",
+    downloadConfirmLabel: "Herunterladen",
+    cancelLabel: "Abbrechen",
   },
   fr: {
     heroCopy: "Montre-moi ce que tu as.<br />Je te dirai qui tu es aujourd'hui.",
@@ -99,6 +119,11 @@ export const translations: Record<
     termsLabel: "Conditions d'utilisation",
     privacyLabel: "Politique de confidentialité",
     contactLabel: "Contact",
+    downloadModalTitle: "Choisir la largeur",
+    downloadMobileOption: "Mobile - 420px",
+    downloadDesktopOption: "Bureau - 700px",
+    downloadConfirmLabel: "Télécharger",
+    cancelLabel: "Annuler",
   },
   es: {
     heroCopy: "Muéstrame lo que tienes.<br />Te diré quién eres hoy.",
@@ -117,6 +142,11 @@ export const translations: Record<
     termsLabel: "Términos de uso",
     privacyLabel: "Política de privacidad",
     contactLabel: "Contacto",
+    downloadModalTitle: "Elegir ancho",
+    downloadMobileOption: "Móvil - 420px",
+    downloadDesktopOption: "Escritorio - 700px",
+    downloadConfirmLabel: "Descargar",
+    cancelLabel: "Cancelar",
   },
 };
 

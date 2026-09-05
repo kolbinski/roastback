@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 import { toPng } from 'html-to-image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -11,6 +11,7 @@ import ReactionButtons from '@/components/ReactionButtons';
 import ArgueBar from '@/components/ArgueBar';
 import EmailCapture from '@/components/EmailCapture';
 import { useRoastback } from '@/hooks/useRoastback';
+import DownloadModal from '@/components/DownloadModal';
 
 export default function Home() {
   const {
@@ -36,13 +37,14 @@ export default function Home() {
   } = useRoastback();
 
   const contentRef = useRef<HTMLDivElement>(null);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
 
-  const handleDownload = async () => {
+  const handleDownload = async (width: number) => {
     if (!contentRef.current) return;
     const el = contentRef.current;
     const previousWidth = el.style.width;
 
-    el.style.width = '672px';
+    el.style.width = `${width}px`;
 
     const dataUrl = await toPng(el, {
       backgroundColor: '#1F1B19',
@@ -55,6 +57,8 @@ export default function Home() {
     link.download = 'roastback.png';
     link.href = dataUrl;
     link.click();
+
+    setShowDownloadModal(false);
   };
 
   if (!ready) return <LoadingScreen />;
@@ -69,7 +73,7 @@ export default function Home() {
         onLanguageChange={setLanguage}
         showDownload={!!photoBase64}
         downloadDisabled={loading || !!errorType}
-        onDownload={handleDownload}
+        onDownload={() => setShowDownloadModal(true)}
         onLogoClick={resetSession}
       />
 
@@ -160,6 +164,14 @@ export default function Home() {
           onChange={setArgueMessage}
           onSubmit={handleArgueSubmit}
           placeholder={argueBarPlaceholder}
+        />
+      )}
+
+      {showDownloadModal && (
+        <DownloadModal
+          t={t}
+          onConfirm={handleDownload}
+          onCancel={() => setShowDownloadModal(false)}
         />
       )}
 
