@@ -37,7 +37,7 @@ export default function EmailCapture({ t }: { t: Translation }) {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="flex gap-2 w-full max-w-sm">
+      <div className="flex flex-col gap-3 w-full max-w-sm">
         <input
           type="email"
           value={email}

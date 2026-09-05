@@ -114,7 +114,7 @@ export default function Home() {
             )}
 
             {errorType === 'closed' && (
-              <div className="space-y-3">
+              <div className="space-y-3 px-4">
                 <p
                   className="font-serif text-center"
                   style={{ color: 'var(--color-text-muted)' }}
