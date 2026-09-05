@@ -57,7 +57,7 @@ export const translations: Record<
     cancelLabel: "Cancel",
   },
   pl: {
-    heroCopy: "Pokaż mi, co masz.<br />Powiem Ci, kim dziś jesteś.",
+    heroCopy: "Pokaż mi, co masz.<br />Powiem Ci, kim dzisiaj jesteś.",
     buttonLabel: "Roast Back",
     userBubble: "Hej RoastBack.app, zroastuj moje zdjęcie, bez litości!",
     loadingText: "Roastuję... to może chwilę potrwać, zamierzam być bezlitosny.",
