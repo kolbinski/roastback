@@ -121,6 +121,7 @@ export function useRoastback() {
     const userText = argueMessage;
     setMessages((prev) => [...prev, { role: 'user', text: userText }]);
     setArgueMessage('');
+    setShowArgueBar(false);
 
     await performArgue(photoBase64, threadId, userText);
   };
