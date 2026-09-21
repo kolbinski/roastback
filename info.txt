@@ -1,0 +1,18 @@
+pg_dump już się wykonał, powstał plik sql, ale nie ma w nim kodu edge functions
+
+Thought for 5s
+To oczekiwane, nie błąd - pg_dump obejmuje wyłącznie samą bazę danych (tabele, RLS, funkcje napisane w PL/pgSQL, jak increment_spend - ta akurat jest w dumpie, bo żyje w Postgresie). Edge Functions (roast, argue, save-email) to zupełnie inny byt - kod TypeScript/Deno, uruchamiany osobno, poza bazą danych - pg_dump nie ma jak, ani po co, go zawierać.
+
+Dobra wiadomość: to już masz zabezpieczone, tylko w innym miejscu
+
+Cały kod Edge Functions siedzi w supabase/functions/ w Twoim repo na GitHubie - to jest jego "backup", od zawsze, przy każdym git push. Nie musisz nic dodatkowo robić, chyba że akurat coś tam zmieniłeś i jeszcze nie zapushowałeś.
+
+Pełny obraz Twojego backupu teraz
+
+Co	Gdzie jest zabezpieczone
+Struktura tabel + RLS + funkcje SQL + dane	roastback_full_backup.sql (właśnie zrobiony)
+Kod Edge Functions	supabase/functions/ w repo git
+Kod frontendu (Next.js)	reszta repo git
+Sekrety (GEMINI_API_KEY itd.)	tylko lokalnie w .env.local - to jedyna rzecz nigdzie indziej nie zbackupowana, warto trzymać kopię w menedżerze haseł
+Żeby odtworzyć appkę od zera na nowym projekcie Supabase: psql (import SQL) + supabase functions deploy (x3) + ustawienie sekretów przez supabase secrets set - i appka wraca do życia identyczna jak teraz.
+
