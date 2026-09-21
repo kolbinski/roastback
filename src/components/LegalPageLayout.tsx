@@ -1,25 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { detectLanguage, type LanguageCode } from '@/lib/i18n';
+import { type LanguageCode } from '@/lib/i18n';
+import { useRoastback } from '@/hooks/useRoastback';
 
 export default function LegalPageLayout({
   content,
 }: {
   content: Record<LanguageCode, string>;
 }) {
-  const [language, setLanguage] = useState<LanguageCode>('en');
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setLanguage(detectLanguage());
-    setReady(true);
-  }, []);
-
-  if (!ready) return null;
-
+  const { language } = useRoastback();
   return (
     <div
       className="min-h-screen"

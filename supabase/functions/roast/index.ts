@@ -121,9 +121,6 @@ serve(async (req) => {
     );
   }
 
-  // Gemini call (roast generation)
-  const languageName = language === "pl" ? "Polish" : "English";
-
   const geminiResponse = await fetch(
     "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent",
     {
@@ -134,7 +131,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         systemInstruction: {
-          parts: [{ text: SYSTEM_PROMPT(languageName) }],
+          parts: [{ text: SYSTEM_PROMPT(language) }],
         },
         contents: [
           {
